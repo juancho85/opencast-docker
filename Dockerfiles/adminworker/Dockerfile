@@ -151,6 +151,6 @@ WORKDIR "${OPENCAST_HOME}"
 EXPOSE 8080
 VOLUME [ "${OPENCAST_DATA}" ]
 
-HEALTHCHECK --timeout=10s CMD /docker-healthcheck.sh
+HEALTHCHECK --interval=5m --timeout=10s CMD /docker-healthcheck.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["app:start"]
